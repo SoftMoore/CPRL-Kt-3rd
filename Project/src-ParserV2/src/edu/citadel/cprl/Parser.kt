@@ -18,17 +18,23 @@ class Parser(private val scanner : Scanner,
              private val idTable : IdTable,
              private val errorHandler : ErrorHandler)
   {
-    /** Symbols that can follow a statement. */
+    /**
+     * Symbols that can follow a statement.
+     */
     private val stmtFollowers = EnumSet.of(
 // ...
       )
 
-    /** Symbols that can follow a subprogram declaration. */
+    /**
+     * Symbols that can follow a subprogram declaration.
+     */
     private val subprogDeclFollowers = EnumSet.of(
 // ...
       )
 
-    /** Symbols that can follow a factor. */
+    /**
+     * Symbols that can follow a factor.
+     */
     private val factorFollowers = EnumSet.of(
         Symbol.semicolon,   Symbol.loopRW,      Symbol.thenRW,
         Symbol.rightParen,  Symbol.andRW,       Symbol.orRW,
@@ -37,11 +43,14 @@ class Parser(private val scanner : Scanner,
         Symbol.plus,        Symbol.minus,       Symbol.times,
         Symbol.divide,      Symbol.modRW,       Symbol.rightBracket,
         Symbol.comma,       Symbol.bitwiseAnd,  Symbol.bitwiseOr,
-        Symbol.bitwiseXor,  Symbol.leftShift,   Symbol.rightShift
+        Symbol.bitwiseXor,  Symbol.leftShift,   Symbol.rightShift,
+        Symbol.dotdot
       )
 
-    /** Symbols that can follow an initial declaration (computed property).
-     *  Set is computed dynamically based on the scope level. */
+    /**
+     * Symbols that can follow an initial declaration (computed property).
+     * Set is computed dynamically based on the scope level.
+     */
     private val initialDeclFollowers : Set<Symbol>
         get()
           {
