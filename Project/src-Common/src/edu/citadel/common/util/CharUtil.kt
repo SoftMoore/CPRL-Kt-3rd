@@ -30,7 +30,7 @@ object CharUtil
 
     /**
      * Returns true only if the specified character is a hex digit
-     * ('0'..'9', 'A'..'F', or 'a'..'f').
+     * `'0'..'9' + 'A'..'F' + 'a'..'f'`
      */
     fun isHexDigit(ch : Char) : Boolean
         = (ch in '0'..'9') || (ch in 'a'..'f') || (ch in 'A'..'F')
@@ -55,9 +55,9 @@ object CharUtil
 
     /**
      * Unescapes characters.  For example, if the parameter c is a tab,
-     * this method will return "\\t"
+     * this method will return "\t"
      *
-     * @return the string for an escaped character.
+     * @return The string for an escaped character.
      */
     fun unescapedChar(c : Char) : String
       {

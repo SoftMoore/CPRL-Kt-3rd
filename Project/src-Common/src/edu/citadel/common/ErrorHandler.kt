@@ -24,7 +24,7 @@ class ErrorHandler
     /**
      * Reports the error.
      *
-     * @throws FatalException if the maximum number of errors have been reported.
+     * @throws FatalException Thrown if the maximum number of errors have been reported.
      */
     fun reportError(e : CompilerException)
       {
