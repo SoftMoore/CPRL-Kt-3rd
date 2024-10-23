@@ -478,7 +478,7 @@ class CVM(numOfBytes : Int)
      * Writes the word value to the specified memory address.
      * Does not alter pc, sp, or bp.
      */
-    private fun putWordToAddr(value : Int, address : Int) = putIntToAddr(value, address)
+    private fun putWordToAddr(word : Int, address : Int) = putIntToAddr(word, address)
 
     //----------------------------------------------------------------------
     // End: internal machine instructions that do NOT correspond to opcodes
@@ -691,6 +691,7 @@ class CVM(numOfBytes : Int)
 
             putIntToAddr(length, destAddr)
             destAddr = destAddr + Constants.BYTES_PER_INTEGER
+
             for (i in 0 until length) {
                 putCharToAddr(data[i], destAddr)
                 destAddr = destAddr + Constants.BYTES_PER_CHAR
