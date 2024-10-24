@@ -32,7 +32,8 @@ private const val EOF = -1
  * This method constructs a CPRL virtual machine, loads into memory the
  * byte code from the file specified by args[0], and runs the byte code.
  *
- * @throws FileNotFoundException if the file specified in args[0] can't be found.
+ * @throws FileNotFoundException Thrown if the file specified in args[0]
+ *                               can't be found.
  */
 fun main(args : Array<String>)
   {
@@ -852,7 +853,7 @@ class CVM(numOfBytes : Int)
 
     private fun putChar() = out.print(popChar())
 
-    private fun putByte() = out.print(popByte().toUByte())
+    private fun putByte() = out.print(popByte())
 
     private fun putInt() = out.print(popInt())
 
@@ -918,7 +919,7 @@ class CVM(numOfBytes : Int)
         val operand1 = popInt()
 
         // zero out all except rightmost 5 bits of shiftAmount
-        val shiftAmount = operand2 and 31
+        val shiftAmount = operand2 and 0b11111
 
         pushInt(operand1 shr shiftAmount)
       }
