@@ -4,6 +4,11 @@ import edu.citadel.common.Position
 
 import java.util.LinkedList
 
+/**
+ * An initializer for composite types.  Composite initializers are enclosed
+ * in braces, which can be nested for initialization of nested composite types.
+ * Implements the composite pattern.
+ */
 class CompositeInitializer(override val position : Position) : AST(), Initializer
   {
     // Use linked list since we could be inserting padding in the middle.
