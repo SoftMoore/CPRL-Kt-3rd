@@ -38,10 +38,7 @@ private const val EOF = -1
 fun main(args : Array<String>)
   {
     if (args.size != 1)
-      {
-        System.err.println("Usage: java edu.citadel.cvm.CVM filename")
-        exitProcess(FAILURE)   // stop the VM with a nonzero status code
-      }
+        printUsageAndExit()
 
     var filename = args[0]
     var file = File(filename)
@@ -73,6 +70,13 @@ fun main(args : Array<String>)
     val cvm = CVM(DEFAULT_MEMORY_SIZE)
     cvm.loadProgram(codeFile)
     cvm.run()
+  }
+
+private fun printUsageAndExit()
+  {
+    System.err.println("Usage: cprl filename")
+    System.err.println()
+    exitProcess(0)
   }
 
 /**

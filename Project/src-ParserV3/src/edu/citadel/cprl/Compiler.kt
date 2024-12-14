@@ -67,8 +67,8 @@ private fun printProgressMessage(message : String) = println(message)
 
 private fun printUsageAndExit()
   {
-    println("Usage: Compiler expecting one or more CPRL source files")
-    println()
+    System.err.println("Usage: cprlc file1 file2 ...")
+    System.err.println()
     exitProcess(0)
   }
 
@@ -142,7 +142,7 @@ class Compiler
         var baseName = sourceFile.name
         val suffixIndex = baseName.lastIndexOf(SUFFIX)
         if (suffixIndex > 0)
-            baseName = sourceFile.name.substring(0, suffixIndex)
+            baseName = baseName.substring(0, suffixIndex)
 
         val targetFileName = "$baseName.asm"
 

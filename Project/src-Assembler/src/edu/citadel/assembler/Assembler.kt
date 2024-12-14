@@ -23,9 +23,8 @@ private var optimize = true
  */
 fun main(args : Array<String>)
   {
-    // check args
     if (args.isEmpty())
-      printUsageAndExit()
+        printUsageAndExit()
 
     var startIndex = 0
 
@@ -93,11 +92,11 @@ private fun printProgressMessage(message : String) = println(message)
 
 private fun printUsageAndExit()
   {
-    println("Usage: Expecting [<option>] and one or more source files")
-    println("where the option is omitted or is one of the following:")
-    println("-opt:off  Turns off all assembler optimizations")
-    println("-opt:on   Turns on all assembler optimizations (default)")
-    println()
+    System.err.println("Usage: assemble [option] file1 file2 ...")
+    System.err.println("where the option is omitted or is one of the following:")
+    System.err.println("-opt:off  Turns off all assembler optimizations")
+    System.err.println("-opt:on   Turns on all assembler optimizations (default)")
+    System.err.println()
     exitProcess(0)
   }
 
