@@ -1,6 +1,5 @@
 package test.cprl
 
-import edu.citadel.common.Source
 import edu.citadel.common.ErrorHandler
 import edu.citadel.common.FatalException
 
@@ -8,9 +7,7 @@ import edu.citadel.cprl.Scanner
 import edu.citadel.cprl.IdTable
 import edu.citadel.cprl.Parser
 
-import java.io.BufferedReader
 import java.io.File
-import java.io.FileReader
 import kotlin.system.exitProcess
 
 private const val SUFFIX = ".cprl"
@@ -39,12 +36,12 @@ fun main(args : Array<String>)
                     sourceFile = File(fileName2)
 
                     if (!sourceFile.isFile)
-                        throw FatalException("*** File $fileName2 not found ***")
+                        throw FatalException("File \"$fileName2\" not found")
                   }
                 else
                   {
                     // don't try to append the suffix
-                    throw FatalException("*** File $fileName not found ***")
+                    throw FatalException("File \"$fileName\" not found")
                   }
               }
 
@@ -75,7 +72,7 @@ private fun printProgressMessage(message : String) = println(message)
 
 private fun printUsageAndExit()
   {
-    println("Usage: TestParser expecting one or more CPRL source files")
+    println("Usage: testParser file1 file2 ...")
     println()
     exitProcess(0)
   }
