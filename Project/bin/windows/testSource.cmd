@@ -9,7 +9,7 @@ setlocal
 call cprl_config.cmd
 
 set CLASSPATH=%COMPILER_PROJECT_PATH%
-java -ea -cp "%CLASSPATH%" test.compiler.TestSourceKt %1
+java -ea -cp "%CLASSPATH%" test.common.TestSourceKt %1
 
 rem restore settings
 endlocal
