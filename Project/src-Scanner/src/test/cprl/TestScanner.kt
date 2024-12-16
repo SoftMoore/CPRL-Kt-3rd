@@ -14,22 +14,16 @@ private val out = PrintStream(java.lang.System.out, true, Charsets.UTF_8)
 
 fun main(args : Array<String>)
   {
+    if (args.size != 1)
+        printUsageAndExit()
+
     try
       {
-        // check args
-        if (args.size != 1)
-            printUsageAndExit()
-
-        println("initializing...")
-
-        val fileName = args[0]
+        val fileName     = args[0]
+        val sourceFile   = File(fileName)
         val errorHandler = ErrorHandler()
-        val sourceFile = File(fileName)
-        val scanner = Scanner(sourceFile, 4, errorHandler)   // 4 lookahead tokens
+        val scanner      = Scanner(sourceFile, 4, errorHandler)   // 4 lookahead tokens
         var token : Token
-
-        println("starting main loop...")
-        println()
 
         do
           {
@@ -66,7 +60,7 @@ private fun printToken(token : Token)
 
 private fun printUsageAndExit()
   {
-    println("Usage: java TestScanner <test file>")
-    println()
+    System.err.println("Usage: testScanner filename")
+    System.err.println()
     exitProcess(0)
   }

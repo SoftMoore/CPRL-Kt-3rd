@@ -142,7 +142,7 @@ private fun readByte(iStream : InputStream) : Byte = iStream.read().toByte()
 
 private fun printUsageMessageAndExit()
   {
-    println("Usage: Expecting one or more file names ending in \".obj\"")
-    println()
+    System.err.println("Usage: disassemble file1 file2 ...")
+    System.err.println()
     exitProcess(0)
   }
