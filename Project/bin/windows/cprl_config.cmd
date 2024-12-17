@@ -3,6 +3,7 @@
 rem
 rem Configuration settings for the CPRL compiler project.
 rem
+
 rem These settings assume an IntelliJ IDEA project named "CompilerProject" with a module
 rem named "compiler".  Class files are placed in the IDEA default "out\production" directory.
 
@@ -18,5 +19,5 @@ set CLASSES_HOME=%PROJECT_HOME%\out\production\compiler
 rem set KT_LIB_HOME to the directory for the Kotlin jar files
 set KT_LIB_HOME=C:\Program Files\JetBrains\IntelliJ IDEA Community Edition\plugins\Kotlin\kotlinc\lib
 
-rem Add project-related class directories to COMPILER_PROJECT_PATH.
+rem add project-related class directories to COMPILER_PROJECT_PATH
 set COMPILER_PROJECT_PATH=%CLASSES_HOME%;%KT_LIB_HOME%\kotlin-stdlib.jar
