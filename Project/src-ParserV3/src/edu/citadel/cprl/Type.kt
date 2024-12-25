@@ -8,7 +8,7 @@ import edu.citadel.cvm.Constants
  *
  * @constructor Construct a new type with the specified type name and size.
  */
-open class Type protected constructor(val typeName : String, var size : Int = 0)
+open class Type protected constructor(val typeName : String, val size : Int = 0)
   {
     /**
      * True if and only if this type is a scalar type.  The scalar
