@@ -19,11 +19,16 @@ fun main(args : Array<String>)
 
     try
       {
+        println("initializing...")
+
         val fileName     = args[0]
         val sourceFile   = File(fileName)
         val errorHandler = ErrorHandler()
         val scanner      = Scanner(sourceFile, 4, errorHandler)   // 4 lookahead tokens
         var token : Token
+
+        println("starting main loop...")
+        println()
 
         do
           {
