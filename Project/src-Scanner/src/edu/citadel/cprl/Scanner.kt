@@ -219,8 +219,9 @@ class Scanner(sourceFile : File, k : Int, private val errorHandler : ErrorHandle
     /**
      * Scans characters in the source file for a valid identifier using the
      * lexical rule:
-     * `identifier = letter ( letter | digit)* .`
-     *
+     * ```
+     * identifier = letter { letter | digit } .
+     * ```
      * @return the string of letters and digits for the identifier.
      */
     private fun scanIdentifier() : String
@@ -277,8 +278,10 @@ class Scanner(sourceFile : File, k : Int, private val errorHandler : ErrorHandle
     /**
      * Scans characters in the source file for a valid decimal (base 10)
      * integer literal using the rules:
-     * `decimalLiteral = digit { digit } .
-     *  digit = '0'..'9' .`
+     * ```
+     * decimalLiteral = digit { digit } .
+     * digit = '0'..'9' .
+     * ```
      */
     private fun scanDecimalLiteral()
       {
@@ -294,7 +297,11 @@ class Scanner(sourceFile : File, k : Int, private val errorHandler : ErrorHandle
 
     /**
      * Scans characters in the source file for a valid binary (base 2)
-     * integer literal.
+     * integer literal using the rules:
+     * ```
+     * binaryLiteral = ( "0b" | "0B" ) binaryDigit { binaryDigit } .
+     * binaryDigit = '0'..'1' .
+     * ```
      */
     private fun scanBinaryLiteral()
       {
@@ -315,7 +322,11 @@ class Scanner(sourceFile : File, k : Int, private val errorHandler : ErrorHandle
 
     /**
      * Scans characters in the source file for a valid hexadecimal (base 16)
-     * integer literal.
+     * integer literal using the rules:
+     * ```
+     * hexLiteral = ( "0x" | "0X" ) hexDigit { hexDigit } .
+     * hexDigit = '0'..'9' + 'A'..'F' + 'a'..'f' .
+     * ```
      */
     private fun scanHexLiteral()
       {
