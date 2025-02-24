@@ -444,7 +444,7 @@ class Parser(private val scanner : Scanner,
         catch (e : ParserException)
           {
             errorHandler.reportError(e)
-            recover(EnumSet.of(Symbol.semicolon,  Symbol.comma,
+            recover(EnumSet.of(Symbol.assign,     Symbol.semicolon, Symbol.comma,
                                Symbol.rightParen, Symbol.leftBrace))
           }
       }
