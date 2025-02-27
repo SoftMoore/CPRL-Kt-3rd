@@ -255,7 +255,7 @@ class Parser(private val scanner : Scanner,
      */
     private fun parseCompositeInitializer()
       {
-// ...
+// ...  Hint: There are 3 symbols in the recover set for parseCompositeInitializer()
       }
 
     /**
@@ -371,7 +371,7 @@ class Parser(private val scanner : Scanner,
      */
     private fun parseFieldDecl()
       {
-// ...
+// ...  Hint: There are 2 symbols in the recover set for parseFieldDecl()
       }
 
     /**
@@ -948,7 +948,7 @@ class Parser(private val scanner : Scanner,
      */
     private fun parseConstValue()
       {
-// ...
+// ...  Hint: There are 4 symbols in the recover set for parseConstValue()
       }
 
     /**
