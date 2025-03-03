@@ -812,7 +812,7 @@ class Parser(private val scanner : Scanner,
             subprogDecl.initialDecls.add(varDecl)
 
             // Add the corresponding single variable declaration to the identifier tables.
-            val loopSvDecl = varDecl.singleVarDecls.last()
+            val loopSvDecl = varDecl.singleVarDecls[0]
             idTable.add(loopSvDecl)
 
             // Create loop variable to add to AST class ForLoopStmt
