@@ -180,7 +180,7 @@ class Parser(private val scanner : Scanner,
 
     /**
      * Parse the following grammar rule:
-     * `varDecl = "var" identifiers ":" ( typeName | arrayTypeConstr | stringTypeConstr)
+     * `varDecl = "var" identifiers ":" ( typeName | arrayTypeConstr | stringTypeConstr )
      *      *               [ ":=" initializer] ";" .`
      *
      * @return The parsed variable declaration.  Returns an

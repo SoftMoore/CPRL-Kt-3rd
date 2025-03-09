@@ -90,7 +90,7 @@ class Parser(private val scanner : Scanner,
 
     /**
      * Parse the following grammar rule:<br>
-     * `varDecl = "var" identifiers ":" ( typeName | arrayTypeConstr | stringTypeConstr)
+     * `varDecl = "var" identifiers ":" ( typeName | arrayTypeConstr | stringTypeConstr )
      *            [ ":=" initializer] ";" .`
      */
     private fun parseVarDecl()
