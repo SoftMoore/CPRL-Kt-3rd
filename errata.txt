@@ -63,6 +63,15 @@ Top of page 103, the rule statement is missing the nonterminal forLoopStmt.
 
 ___________________________________________________________________
 
+
+Top of page 144, change
+   number characters between the quotation marks.
+to
+   number of characters between the quotation marks.
+
+___________________________________________________________________
+
+
 Bottom of page 147 and top of page 159
 
 In the rectangle for SubprogramDecl, change "PROGRAM" to "GLOBAL"
@@ -81,7 +90,25 @@ For the second constructor add this line at the end.
 ___________________________________________________________________
 
 
+Page 160, in the bullet for ConstDecl and ConstValue, change
+   package edu.citadel.common
+to
+   package edu.citadel.common.util
+
+___________________________________________________________________
+
+
 Page 161, add the following constraint rule.
 
 •  Program
    – Miscellaneous Rule: A program must contain a parameterless procedure named main().
+
+___________________________________________________________________
+
+
+Page 169 in the table comparing CVM and JVM Opcodes, change
+   BREQ
+to
+   BRE
+
+
