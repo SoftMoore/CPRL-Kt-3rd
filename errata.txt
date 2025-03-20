@@ -109,6 +109,6 @@ ___________________________________________________________________
 Page 169 in the table comparing CVM and JVM Opcodes, change
    BREQ
 to
-   BRE
+   BE
 
 
