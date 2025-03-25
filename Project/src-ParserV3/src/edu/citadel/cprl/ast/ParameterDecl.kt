@@ -33,6 +33,11 @@ class ParameterDecl(paramId : Token, type : Type, val isVarParam : Boolean)
           { "Invalid CPRL type in parameter declaration." }
       }
 
+    override fun emit()
+      {
+        // nothing to emit for parameter declarations
+      }
+
     override fun toString() : String
       {
         val builder = StringBuilder()
