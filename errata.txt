@@ -136,3 +136,12 @@ Page 194, in method emit() for class AssignmentStmt, change
 to
    variable.emit();
 
+___________________________________________________________________
+
+
+Page 257, approximately two-thirds the way down the page, checkInitializer()
+is mispelled.  Change
+   simply calls checkInitialzer()
+to
+   simply calls checkInitializer()
+
