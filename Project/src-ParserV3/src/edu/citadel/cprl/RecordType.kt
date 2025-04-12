@@ -23,11 +23,7 @@ class RecordType(typeName : String, val fieldDecls : List<FieldDecl>)
             fieldNameMap[fieldDecl.idToken.text] = fieldDecl
 
         // compute fieldDecl offsets
-        for (i in 1 until fieldDecls.size)
-          {
-            val prevDecl = fieldDecls[i - 1]
-            fieldDecls[i].offset = prevDecl.offset + prevDecl.size
-          }
+// ...
       }
 
     /**
