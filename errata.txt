@@ -16,13 +16,26 @@ ____________________________________________________________________
 
 Near the bottom of page 44, the rule for syntaxFactor is missing the grouping with parentheses
 plus a period at the end.
+Change
    syntaxFactor = identifier | terminalSym
                 | "{" syntaxExpr "}" | "[" syntaxExpr "]"
 to
-   syntaxFactor = identifier | terminalSym
-                | "{" syntaxExpr "}" | "[" syntaxExpr "]" | "(" syntaxExpr ")" .
+   syntaxFactor = identifier | terminalSym | "{" syntaxExpr "}"
+                | "[" syntaxExpr "]" | "(" syntaxExpr ")" .
+
+Also, delete the rule for escapedChar and change
+   terminalSym = "\"" { terminalChar | escapedChar } "\"" .
+to
+   terminalSym = "\"" { terminalChar | "\\" ( "\"" | "\\" ) } "\"" .
 
 ____________________________________________________________________
+
+
+Near the top of page 45, delete the sentence
+    Similarly, escapedChar is defined to be ... or another backslash.
+
+____________________________________________________________________
+
 
 Near the middle of p. 58, change
    (except that arrays are always passed by value, regardless of how the parameter is declared)
