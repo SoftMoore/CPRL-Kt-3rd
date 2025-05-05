@@ -22,35 +22,11 @@ open class LoopStmt : Statement()
 
     override fun checkConstraints()
       {
-        try
-          {
-            whileExpr?.let {   // can't move left brace to next line!
-                it.checkConstraints()
-
-                if (it.type != Type.Boolean)
-                  {
-                    val errorMsg = "The \"while\" expression should have type Boolean."
-                    throw error(it.position, errorMsg)
-                  }
-              }
-
-            statement.checkConstraints()
-          }
-        catch (e : ConstraintException)
-          {
-            errorHandler.reportError(e)
-          }
+//  ...
       }
 
     override fun emit()
       {
-        emitLabel(L1)
-
-        whileExpr?.emitBranch(false, L2)
-
-        statement.emit()
-        emit("BR $L1")
-
-        emitLabel(L2)
+//  ...
       }
   }
