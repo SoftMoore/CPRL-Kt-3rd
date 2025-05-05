@@ -1,5 +1,6 @@
 package edu.citadel.cprl.ast
 
+import edu.citadel.cprl.ArrayType
 import edu.citadel.cprl.Token
 
 /**
@@ -9,7 +10,23 @@ import edu.citadel.cprl.Token
  */
 class ProcedureDecl(procId : Token) : SubprogramDecl(procId)
   {
-    // inherited checkConstraints() is sufficient
+    override fun checkConstraints()
+      {
+        for (paramDecl in parameterDecls)
+          {
+            paramDecl.checkConstraints()
+
+            // arrays are always passed as var params.
+            if (paramDecl.type is ArrayType)
+                paramDecl.isVarParam = true
+          }
+
+        for (decl in initialDecls)
+            decl.checkConstraints()
+
+        for (statement in statements)
+            statement.checkConstraints()
+      }
 
     override fun emit()
       {

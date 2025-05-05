@@ -69,12 +69,20 @@ class FunctionCallExpr(private val funId : Token,
                 if (!matchTypes(paramDecl.type, expr))
                     throw error(expr.position, "Parameter type mismatch.")
 
-                // arrays are passed as var parameters (checked in FunctionDecl)
-                if (paramDecl.isVarParam && paramDecl.type is ArrayType)
+                // check that arrays are passed as var parameters
+                if (paramDecl.type is ArrayType)
                   {
-                    // replace variable expression by a variable
-                    expr = Variable(expr as VariableExpr)
-                    actualParams[i] = expr
+                    if (expr is VariableExpr)
+                      {
+                        // replace a variable expression by a variable
+                        expr = Variable(expr)
+                        actualParams.set(i, expr)
+                      }
+                    else
+                      {
+                        val errorMsg = "Expression for an array parameter must be a variable."
+                        throw error(expr.position, errorMsg)
+                      }
                   }
               }
           }

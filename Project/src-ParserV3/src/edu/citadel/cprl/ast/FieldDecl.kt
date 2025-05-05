@@ -13,7 +13,7 @@ import edu.citadel.cprl.Type
 class FieldDecl(fieldId : Token, type : Type) : Declaration(fieldId, type)
   {
     var offset = 0    // offset for this field within the record; initialized
-                      // to 0 but updated when constructing the record type
+                      // to 0 but updated in constructor for RecordType
 
     /**
      * The size (number of bytes) associated with this field declaration,

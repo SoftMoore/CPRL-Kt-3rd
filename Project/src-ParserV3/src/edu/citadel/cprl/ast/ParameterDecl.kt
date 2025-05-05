@@ -11,7 +11,7 @@ import edu.citadel.cprl.Type
  *              type, and a boolean value that indicates if it is a
  *              variable parameter declaration.
  */
-class ParameterDecl(paramId : Token, type : Type, val isVarParam : Boolean)
+class ParameterDecl(paramId : Token, type : Type, var isVarParam : Boolean)
     : Declaration(paramId, type), VariableDecl
   {
     override var relAddr = 0      // relative address for this declaration

@@ -20,9 +20,7 @@ class FunctionDecl(funcId : Token) : SubprogramDecl(funcId)
 
     override fun checkConstraints()
       {
-        try
-          {
-// ...   call super.checkConstraints() before checking any additional constraints
+// ...
       }
 
     /**

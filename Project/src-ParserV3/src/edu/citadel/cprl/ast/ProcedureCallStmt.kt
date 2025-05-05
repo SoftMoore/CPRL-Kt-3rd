@@ -3,6 +3,7 @@ package edu.citadel.cprl.ast
 import edu.citadel.common.ConstraintException
 
 import edu.citadel.cprl.Token
+import edu.citadel.cprl.ArrayType
 import edu.citadel.cprl.StringType
 
 /**

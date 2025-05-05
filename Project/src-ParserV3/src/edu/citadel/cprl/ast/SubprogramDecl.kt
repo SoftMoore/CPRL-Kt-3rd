@@ -41,18 +41,6 @@ abstract class SubprogramDecl(subprogramId : Token) : Declaration(subprogramId)
             return paramLength
           }
 
-    override fun checkConstraints()
-      {
-        for (paramDecl in parameterDecls)
-            paramDecl.checkConstraints()
-
-        for (decl in initialDecls)
-            decl.checkConstraints()
-
-        for (statement in statements)
-            statement.checkConstraints()
-      }
-
     /**
      * Set the relative address (offset) for each variable and
      * parameter, and compute the length of all variables.
