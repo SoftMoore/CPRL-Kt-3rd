@@ -26,14 +26,14 @@ L0:
    LDCINT 1
    SUB
    STOREW
-L8:
+L2:
    LDLADDR 8
    LOADW
    LDCINT 0
-   BGE L6
+   BGE L8
    LDCB 0
-   BR L7
-L6:
+   BR L9
+L8:
    LDLADDR 12
    LOADW
    LDLADDR -4
@@ -44,14 +44,14 @@ L6:
    MUL
    ADD
    LOADW
-   BGE L4
+   BGE L6
    LDCB 1
-   BR L5
-L4:
+   BR L7
+L6:
    LDCB 0
-L5:
 L7:
-   BZ L9
+L9:
+   BZ L3
    LDLADDR -4
    LOADW
    LDLADDR 8
@@ -76,8 +76,8 @@ L7:
    LDCINT 1
    SUB
    STOREW
-   BR L8
-L9:
+   BR L2
+L3:
    LDLADDR -4
    LOADW
    LDLADDR 8

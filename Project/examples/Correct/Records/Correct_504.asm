@@ -63,11 +63,11 @@ _main:
    LDLADDR 8
    LDCINT 1
    STOREW
-L2:
+L0:
    LDLADDR 8
    LOADW
    LDCINT 12
-   BG L3
+   BG L1
    LDGADDR 0
    LDLADDR 8
    LOADW
@@ -82,6 +82,6 @@ L2:
    LDCINT 1
    ADD
    STOREW
-   BR L2
-L3:
+   BR L0
+L1:
    RET 0
