@@ -14,9 +14,4 @@ object EmptyInitialDecl : InitialDecl(Token(), Type.UNKNOWN)
       {
         // nothing to check
       }
-
-    override fun emit()
-      {
-        // nothing to emit
-      }
   }
