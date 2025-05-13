@@ -195,7 +195,7 @@ to
 ___________________________________________________________________
 
 
-Page 257, under the the two rules for Variable, add the following clarifying paragraph.
+Page 257, under the two rules for Variable, add the following clarifying paragraph.
    Note that parser method parseArrayTypeConstr() returns an ArrayType, not an AST
    class.  Therefore, this parser method must enforce a rule identical to the type rule stated
    above for ArrayTypeDecl – there is no AST class to check the constraint.  For consistency,
