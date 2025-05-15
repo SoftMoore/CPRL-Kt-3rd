@@ -136,7 +136,7 @@ enum class Opcode(val value : Byte)
 
         init
           {
-            for (opcode in values())
+            for (opcode in entries)
                 valueOpcodeMap[opcode.value] = opcode
           }
 
