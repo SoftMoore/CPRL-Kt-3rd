@@ -1,5 +1,8 @@
-Errata for original printing of the book.  These changes will be made in a subsequent
-release of the book sometime around the middle of 2025.
+Errata for original printing of the book.  The errata listed below were corrected in a
+subsequent release of the book on May 17, 2025.  Look for the line
+   Republished with minor revisions May 2025
+just below the ISBN number on page ii (the back of the title page) to ensure that you have
+the latest revision of the book with these corrections.
 
 ____________________________________________________________________
 
@@ -160,6 +163,7 @@ to
    variable.emit();
 
 ___________________________________________________________________
+
 
 Page 219, near the bottom of the page, change
    We start with a brief overview of the CVM instructions mentioned in the fourth bullet
