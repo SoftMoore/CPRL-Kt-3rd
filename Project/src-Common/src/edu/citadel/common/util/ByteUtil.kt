@@ -50,7 +50,7 @@ object ByteUtil
 
     /**
      * Converts 2 bytes to a Char.  The bytes passed as arguments are
-     * ordered with b0 as the high order byte and b1 as the low order byte.
+     * ordered with b0 as the high-order byte and b1 as the low-order byte.
      */
     fun bytesToChar(b0 : Byte, b1 : Byte) : Char
         = ((b0.toInt() shl 8 and 0x0000FF00) or
@@ -58,7 +58,7 @@ object ByteUtil
 
     /**
      * Converts 4 bytes to an Int.  The bytes passed as arguments are
-     * ordered with b0 as the high order byte and b3 as the low order byte.
+     * ordered with b0 as the high-order byte and b3 as the low-order byte.
      */
     fun bytesToInt(b0 : Byte, b1 : Byte, b2 : Byte, b3 : Byte) : Int
         =    (b0.toInt() shl 24 and -0x1000000
@@ -67,9 +67,9 @@ object ByteUtil
           or (b3.toInt()        and 0x000000FF))
 
     /**
-     * Converts a byte to an int.  The specified byte is the the low
-     * order (least significant) byte for the int and the three high
-     * order bytes are all zero.
+     * Converts a byte to an int.  The specified byte is the low-order
+     * (least significant) byte for the int and the three high-order
+     * bytes are all zero.
      */
     fun byteToInt(b: Byte): Int
       {
@@ -79,8 +79,8 @@ object ByteUtil
 
     /**
      * Converts a Char to an array of 2 bytes.  The bytes in the return
-     * array are ordered with the byte at index 0 as the high order byte
-     * and the byte at index 1 as the low order byte.
+     * array are ordered with the byte at index 0 as the high-order byte
+     * and the byte at index 1 as the low-order byte.
      */
     fun charToBytes(c : Char) : ByteArray
       {
@@ -92,8 +92,8 @@ object ByteUtil
 
     /**
      * Converts a Short to an array of 2 bytes.  The bytes in the return
-     * array are ordered with the byre at index 0 as the high order byte
-     * and the byte at index 1 as the low order byte.
+     * array are ordered with the byre at index 0 as the high-order byte
+     * and the byte at index 1 as the low-order byte.
      */
     fun shortToBytes(n : Short) : ByteArray
       {
@@ -105,8 +105,8 @@ object ByteUtil
 
     /**
      * Converts an Int to an array of 4 bytes.  The bytes in the return
-     * array are ordered with the byte at index 0 as the high order byte
-     * and the byte at index 3 as the low order byte.
+     * array are ordered with the byte at index 0 as the high-order byte
+     * and the byte at index 3 as the low-order byte.
      */
     fun intToBytes(n : Int) : ByteArray
       {
@@ -119,11 +119,7 @@ object ByteUtil
       }
 
     /**
-     * Returns the low order (least significant) byte of the specified integer.
+     * Returns the low-order (least significant) byte of the specified integer.
      */
-    fun intToByte(n: Int): Byte
-      {
-        val bytes = intToBytes(n)
-        return bytes[3]
-      }
+    fun intToByte(n: Int): Byte = intToBytes(n)[3]
   }
