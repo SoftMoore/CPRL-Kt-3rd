@@ -59,7 +59,7 @@ object CharUtil
      *
      * @return The string for an escaped character.
      */
-    fun unescapedChar(c : Char) : String
+    fun unescapeChar(c : Char) : String
       {
         return when (c)
           {

@@ -76,7 +76,7 @@ fun main(args : Array<String>)
 
                 c = readChar(file)
                 if (CharUtil.isEscapeChar(c))
-                    out.print(CharUtil.unescapedChar(c))
+                    out.print(CharUtil.unescapeChar(c))
                 else
                     out.print(c)
 
@@ -95,7 +95,7 @@ fun main(args : Array<String>)
                   {
                     c = readChar(file)
                     if (CharUtil.isEscapeChar(c))
-                        out.print(CharUtil.unescapedChar(c))
+                        out.print(CharUtil.unescapeChar(c))
                     else
                         out.print(c)
                   }
