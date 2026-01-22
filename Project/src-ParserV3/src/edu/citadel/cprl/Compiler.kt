@@ -102,8 +102,6 @@ class Compiler
         // check constraints
         if (!errorHandler.errorsExist())
           {
-            AST.idTable = idTable
-            AST.errorHandler = errorHandler
             printProgressMessage("...checking constraints")
             program.checkConstraints()
           }
