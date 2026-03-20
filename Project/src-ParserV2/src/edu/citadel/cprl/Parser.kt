@@ -245,7 +245,7 @@ class Parser(private val scanner : Scanner,
         catch (e : ParserException)
           {
             errorHandler.reportError(e)
-            recover(setOf(Symbol.comma, Symbol.rightBrace, Symbol.semicolon))
+            recover(EnumSet.of(Symbol.comma, Symbol.rightBrace, Symbol.semicolon))
           }
       }
 
@@ -316,7 +316,7 @@ class Parser(private val scanner : Scanner,
         catch (e : ParserException)
           {
             errorHandler.reportError(e)
-            recover(EnumSet.of(Symbol.semicolon))
+            recover(EnumSet.of(Symbol.assign, Symbol.semicolon))
           }
       }
 
@@ -399,7 +399,7 @@ class Parser(private val scanner : Scanner,
         catch (e: ParserException)
           {
             errorHandler.reportError(e)
-            recover(EnumSet.of(Symbol.semicolon))
+            recover(EnumSet.of(Symbol.assign, Symbol.semicolon))
           }
       }
 

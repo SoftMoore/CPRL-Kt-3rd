@@ -264,7 +264,7 @@ class Parser(private val scanner : Scanner,
         catch (e : ParserException)
           {
             errorHandler.reportError(e)
-            recover(setOf(Symbol.colon))
+            recover(EnumSet.of(Symbol.colon))
             return emptyList()
           }
       }
@@ -297,7 +297,7 @@ class Parser(private val scanner : Scanner,
         catch (e: ParserException)
           {
             errorHandler.reportError(e)
-            recover(setOf(Symbol.comma, Symbol.rightBrace, Symbol.semicolon))
+            recover(EnumSet.of(Symbol.comma, Symbol.rightBrace, Symbol.semicolon))
             return EmptyInitializer
           }
       }
@@ -385,7 +385,7 @@ class Parser(private val scanner : Scanner,
         catch (e: ParserException)
           {
             errorHandler.reportError(e)
-            recover(EnumSet.of(Symbol.semicolon))
+            recover(EnumSet.of(Symbol.assign, Symbol.semicolon))
             return ArrayType("_", 0, Type.UNKNOWN)
           }
       }
@@ -490,7 +490,7 @@ class Parser(private val scanner : Scanner,
         catch (e: ParserException)
           {
             errorHandler.reportError(e)
-            recover(EnumSet.of(Symbol.semicolon))
+            recover(EnumSet.of(Symbol.assign, Symbol.semicolon))
             return StringType("_", 0)
           }
       }
@@ -1014,7 +1014,7 @@ class Parser(private val scanner : Scanner,
         catch (e : ParserException)
           {
             errorHandler.reportError(e)
-            recover(setOf(Symbol.assign, Symbol.semicolon))
+            recover(EnumSet.of(Symbol.assign, Symbol.semicolon))
             return null
           }
       }
