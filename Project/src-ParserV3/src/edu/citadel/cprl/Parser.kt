@@ -297,7 +297,7 @@ class Parser(private val scanner : Scanner,
         catch (e: ParserException)
           {
             errorHandler.reportError(e)
-            recover(initialDeclFollowers)
+            recover(setOf(Symbol.comma, Symbol.rightBrace, Symbol.semicolon))
             return EmptyInitializer
           }
       }
