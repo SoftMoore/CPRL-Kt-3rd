@@ -20,13 +20,8 @@ class SingleVarDecl(identifier : Token, varType : Type,
                     override val scopeLevel  : ScopeLevel)
     : InitialDecl(identifier, varType), VariableDecl
   {
-    override var relAddr = 0   // relative address for the variable
-                               // introduced by this declaration
+    override var relAddr = 0
 
-    /**
-     * The size (number of bytes) associated with this single variable declaration,
-     * which is simply the number of bytes associated with its type.
-     */
     override val size : Int
         get() = type.size
 

@@ -14,15 +14,14 @@ import edu.citadel.cprl.Type
 class ParameterDecl(paramId : Token, type : Type, var isVarParam : Boolean)
     : Declaration(paramId, type), VariableDecl
   {
-    override var relAddr = 0      // relative address for this declaration
+    override var relAddr = 0
 
     override val scopeLevel = ScopeLevel.LOCAL   // always LOCAL for a parameter
 
     /**
-     * The size (number of bytes) associated with this parameter declaration.
-     * The size of a value parameter declaration is the number of bytes associated
-     * with its type.  For variable parameters, the size is the number of bytes
-     * needed for a memory address.
+     * The size of a value parameter declaration is the number of
+     * bytes associated with its type.  For variable parameters, the
+     * size is the number of bytes needed for a memory address.
      */
     override val size : Int
         get() = if (isVarParam) Type.Address.size else type.size
