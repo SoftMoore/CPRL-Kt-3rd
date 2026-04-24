@@ -7,7 +7,7 @@ import edu.citadel.cprl.Type
  * The abstract syntax tree node for an if statement.
  *
  * @property booleanExpr The boolean expression that, if true, will result
- *                       in the execution of the list of "then" statements.
+ *                       in the execution of the "then" statement.
  * @property thenStmt    The statement to be executed when the boolean
  *                       expression evaluates to true.
  * @property elseStmt    The statement to be executed when the boolean
