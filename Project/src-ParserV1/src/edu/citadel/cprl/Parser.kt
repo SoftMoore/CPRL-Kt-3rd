@@ -838,7 +838,7 @@ class Parser(private val scanner : Scanner,
                     if (scanner.lookahead(2).symbol == Symbol.leftParen)
                         parseFunctionCallExpr()
                     else
-                        throw error("Identifier \"${scanner.token}\" has not been declared.")
+                        throw error("Identifier \"$idStr\" has not been declared.")
                   }
               }
             else if (scanner.symbol == Symbol.leftParen)

@@ -1120,16 +1120,18 @@ class Parser(private val scanner : Scanner,
                     else
                       {
                         val errorPos = scanner.position
-                        val errorMsg = "Identifier \"$idStr\" is not valid as an expression."
+                        val errorMsg = "Identifier \"$idStr\" is " +
+                                       "not valid as an expression."
 
-                        // special recovery when procedure call is used as a function call
+                        // special error recovery when procedure call
+                        // is mistakenly used as a function call
                         if (decl is ProcedureDecl)
                           {
                             scanner.advance()
                             if (scanner.symbol == Symbol.leftParen)
                               {
                                 scanner.advanceTo(Symbol.rightParen)
-                                scanner.advance()   // advance past the right paren
+                                scanner.advance()   // advance past right paren
                               }
                           }
 
@@ -1142,7 +1144,7 @@ class Parser(private val scanner : Scanner,
                     if (scanner.lookahead(2).symbol == Symbol.leftParen)
                         return parseFunctionCallExpr()
                     else
-                        throw error("Identifier \"${scanner.token}\" has not been declared.")
+                        throw error("Identifier \"$idStr\" has not been declared.")
                   }
               }
             else if (scanner.symbol == Symbol.leftParen)
