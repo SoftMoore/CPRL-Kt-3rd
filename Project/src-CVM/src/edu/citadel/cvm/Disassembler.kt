@@ -89,9 +89,9 @@ fun main(args : Array<String>)
                 out.print("$opcodeAddrStr:  $opcode")
 
                 // now print the string
-                out.print("  \"")
+                out.print(" \"")
                 val strLength : Int = readInt(file)
-                for (i in 0 until strLength)
+                repeat(strLength)
                   {
                     c = readChar(file)
                     if (CharUtil.isEscapeChar(c))
